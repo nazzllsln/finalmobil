@@ -2,10 +2,12 @@ import 'package:finalmobil/screens/client/login.dart';
 import 'package:finalmobil/screens/client/profile.dart';
 import 'package:finalmobil/screens/client/register.dart';
 import 'package:finalmobil/screens/core/error.dart';
+import 'package:finalmobil/screens/core/loader.dart';
 import 'package:finalmobil/screens/home.dart';
 import 'package:finalmobil/screens/product/product.dart';
 import 'package:finalmobil/screens/product/search.dart';
 import 'package:finalmobil/screens/static/about.dart';
+import 'package:finalmobil/screens/static/boarding.dart';
 import 'package:finalmobil/screens/static/contact.dart';
 import 'package:go_router/go_router.dart';
 
@@ -15,7 +17,15 @@ final routes = GoRouter(
   routes: [
     GoRoute(
       path: '/',
+      builder: (context, state) => const LoaderScreen(),
+    ),
+    GoRoute(
+      path: '/home',
       builder: (context, state) => const HomeScreen(),
+    ),
+    GoRoute(
+      path: '/boarding',
+      builder: (context, state) => const BoardingScreen(),
     ),
     GoRoute(
       path: '/login',

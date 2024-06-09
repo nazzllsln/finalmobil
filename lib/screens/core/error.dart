@@ -23,7 +23,7 @@ class _ErrorScreenState extends State<ErrorScreen> {
             const Gap(20),
             IconButton(
               onPressed: () => GoRouter.of(context).pop(),
-              icon: Icon(CupertinoIcons.chevron_back),
+              icon: const Icon(CupertinoIcons.chevron_back),
             ),
           ],
         ),
