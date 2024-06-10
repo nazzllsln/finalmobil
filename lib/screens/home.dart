@@ -51,6 +51,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     cartCubit.sepetEkle(ad: "macbook", sayi: 1, fiyat: 99000);
                   },
                   child: Text("Sepete Ekle Macbook")),
+              ElevatedButton(
+                  onPressed: () {
+                    GoRouter.of(context).push("/products");
+                  },
+                  child: Text("Urunler")),
             ],
           ),
         )),

@@ -1,5 +1,6 @@
 import 'package:finalmobil/bloc/cart/cart_cubit.dart';
 import 'package:finalmobil/bloc/client/client_cubit.dart';
+import 'package:finalmobil/bloc/products/products_cubit.dart';
 import 'package:finalmobil/core/routes.dart';
 import 'package:finalmobil/core/themes.dart';
 import 'package:flutter/material.dart';
@@ -20,17 +21,15 @@ class MyApp extends StatelessWidget {
         BlocProvider(
             create: (context) =>
                 ClientCubit(ClientState(darkMode: false, language: "en"))),
-        BlocProvider(create: (context) => CartCubit(CartState(sepet: [])))
+        BlocProvider(create: (context) => CartCubit(CartState(sepet: []))),
+        BlocProvider(
+            create: (context) => ProductsCubit(ProductState(favorites: [])))
       ],
       child: BlocBuilder<ClientCubit, ClientState>(builder: (context, state) {
         return MaterialApp.router(
           debugShowCheckedModeBanner: false,
           routerConfig: routes,
           themeMode: state.darkMode ? ThemeMode.dark : ThemeMode.light,
-          // Theme config for FlexColorScheme version 7.3.x. Make sure you use
-// same or higher package version, but still same major version. If you
-// use a lower package version, some properties may not be supported.
-// In that case remove them after copying this theme to your app.
           theme: lightTheme,
           darkTheme: darkTheme,
         );
