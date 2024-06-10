@@ -14,7 +14,7 @@ class LoaderScreen extends StatefulWidget {
 class _LoaderScreenState extends State<LoaderScreen> {
   loadApp() async {
     final stroage = Storage();
-    stroage.clearStorage();
+    // await stroage.clearStorage();
     final firstLaunch = await stroage.isFirstLaunch();
 
     if (firstLaunch) {
